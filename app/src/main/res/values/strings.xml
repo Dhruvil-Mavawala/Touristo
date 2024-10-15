@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Touristo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="screen1">Affordable \n adventures, limitless possibilities</string>
+    <string name="screen2">Authentic experiance, Local vibes and more</string>
+    <string name="screen3">Your World in one place</string>
+    <string name="screen1desc">We provide More facilities at affordable price and you comform is our priority</string>
+    <string name="screen2desc">we help you to connect with local vibes of the nature</string>
+    <string name="screen3desc">we organize your tour and you explore our luxuries services.</string>
+    <string name="startDesc">Book Your next trip and Interact with nature and explore new place.</string>
+
+
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "292898684091",
+    "project_id": "travel-1f4cb",
+    "storage_bucket": "travel-1f4cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292898684091:android:892dc6335f166efec0bd9e",
+        "android_client_info": {
+          "package_name": "com.example.tourttavels"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJqj22SKUam4JS7CG7k8nUdxyIgUyWaSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

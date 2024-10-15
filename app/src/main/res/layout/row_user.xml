@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:background="@color/white"
+    android:elevation="10dp"
+    android:layout_margin="10dp"
+    android:radius="20dp"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ufullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Full name"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:textAlignment="textStart"/>
+
+        <TextView
+            android:id="@+id/uname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:textAlignment="textStart"/>
+
+        <TextView
+            android:id="@+id/uemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:textAlignment="textStart"/>
+
+        <TextView
+            android:id="@+id/uphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:textAlignment="textStart"/>
+
+        <TextView
+            android:id="@+id/upassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:textAlignment="textStart"/>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
