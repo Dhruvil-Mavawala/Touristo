@@ -11,8 +11,9 @@ public class BookModel {
     public String  status;
     public String total_amount;
     public String username;
+    public String date;
 
-    public BookModel(String gst, String pack_id, String pack_name, String pack_pic, String pack_price, String status, String total_amount, String username) {
+    public BookModel(String gst, String pack_id, String pack_name, String pack_pic, String pack_price, String status, String total_amount, String username,String date) {
         this.gst = gst;
         this.pack_id = pack_id;
         this.pack_name = pack_name;
@@ -21,9 +22,17 @@ public class BookModel {
         this.status = status;
         this.total_amount = total_amount;
         this.username = username;
+        this.date=date;
     }
     public BookModel() {
 
+    }
+
+    public String getDate() {
+        return date;
+    }
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getGst() {
@@ -101,6 +110,7 @@ public class BookModel {
         map.put("status",model.getStatus());
         map.put("total_amount",model.getTotal_amount());
         map.put("username",model.getUsername());
+        map.put("date",model.getDate());
 
         return map;
     }

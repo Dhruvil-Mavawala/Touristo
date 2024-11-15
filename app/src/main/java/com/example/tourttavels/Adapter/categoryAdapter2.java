@@ -20,9 +20,9 @@ import com.example.tourttavels.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class categoryAdapter  extends FirebaseRecyclerAdapter<categorymodel, categoryAdapter.catviewHolder> {
+public class categoryAdapter2 extends FirebaseRecyclerAdapter<categorymodel, categoryAdapter2.catviewHolder> {
 
-    public categoryAdapter(@NonNull FirebaseRecyclerOptions<categorymodel> options) {
+    public categoryAdapter2(@NonNull FirebaseRecyclerOptions<categorymodel> options) {
         super(options);
     }
 
@@ -39,10 +39,7 @@ public class categoryAdapter  extends FirebaseRecyclerAdapter<categorymodel, cat
                 // Handle the click event here
                 // You can perform any action you want when a category is clicked
                 // For example, you can start a new activity or show a toast message
-                Intent intent=new Intent(holder.catlinear.getContext(), catDetail.class);
-                intent.putExtra("cat_name",holder.cat_name);
-                intent.putExtra("cat_pic",holder.cat_pic);
-                holder.catlinear.getContext().startActivity(intent);
+
                 Toast.makeText(holder.catlinear.getContext(), "Category clicked: " + holder.cat_name, Toast.LENGTH_SHORT).show();
             }
         });
@@ -54,7 +51,7 @@ public class categoryAdapter  extends FirebaseRecyclerAdapter<categorymodel, cat
 
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        View photoView = inflater.inflate(R.layout.row_category, parent, false);
+        View photoView = inflater.inflate(R.layout.row_category2, parent, false);
         catviewHolder viewHolder = new catviewHolder(photoView);
         return viewHolder;
 

@@ -17,13 +17,28 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:title="Add Package"
-        android:titleTextColor="@color/white"
-        android:layout_marginBottom="10dp"/>
+      <Toolbar
+          android:id="@+id/toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="#DF0D92F4"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/amethysta"
+            android:textStyle="bold"
+            android:text="Add Package"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="123dp"
+            tools:layout_editor_absoluteY="15dp" />
+
+      </Toolbar>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/anta"
-        android:text="Package Tittle:"/>
+        android:text="Package Location:"/>
     <EditText
         android:id="@+id/edlocation"
         android:layout_width="match_parent"
@@ -186,24 +201,57 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/anta"
         android:text="Popular:"/>
-    <EditText
-        android:id="@+id/edpopualr"
-        android:layout_marginHorizontal="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textColorHint="@color/black"
-        android:hint="Popular or not"
-        android:background="@drawable/style_edittext"/>
+<!--    <EditText-->
+<!--        android:id="@+id/edpopualr"-->
+<!--        android:layout_marginHorizontal="10dp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="10dp"-->
+<!--        android:textColorHint="@color/black"-->
+<!--        android:hint="Popular or not"-->
+<!--        android:background="@drawable/style_edittext"/>-->
+
+      <androidx.appcompat.widget.AppCompatSpinner
+          android:id="@+id/edpopualr"
+          android:layout_marginHorizontal="10dp"
+          android:layout_width="match_parent"
+          android:layout_height="47dp"
+          android:padding="5dp"
+          android:textColorHint="@color/white"
+          android:hint="Enter Product Description"
+          android:background="@drawable/style_edittext"/>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/anta"
+          android:text="Category:"/>
+
+      <androidx.appcompat.widget.AppCompatSpinner
+          android:id="@+id/edcategory"
+          android:layout_marginHorizontal="10dp"
+          android:layout_width="match_parent"
+          android:layout_height="47dp"
+          android:padding="5dp"
+          android:textColorHint="@color/white"
+          android:hint="Enter Product Description"
+          android:background="@drawable/style_edittext"/>
 
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:id="@+id/btnInsert"
-        android:backgroundTint="@color/black"
-        android:text="Insert Product"/>
+      <Button
+          android:id="@+id/btnInsert"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          style="@style/Button"
+          android:layout_gravity="center"
+          android:backgroundTint="@color/lite_blue"
+          android:elevation="10dp"
+          android:text="Add Package"
+          android:textColor="@color/black"
+          android:textSize="25dp"
+          android:layout_margin="10dp"
+          app:strokeColor="@color/black"
+          app:strokeWidth="2dp" />
 
     </LinearLayout>
 

@@ -1,74 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
-    android:background="@color/white"
-    android:elevation="10dp"
-    android:layout_margin="10dp"
-    android:radius="20dp"
-    android:padding="10dp">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:contentPadding="10dp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="20dp">
 
-        <TextView
-            android:id="@+id/ufullname"
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Full name"
-            android:layout_marginTop="20dp"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:layout_marginStart="10dp"
-            android:textAlignment="textStart"/>
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/uname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Username"
-            android:layout_marginTop="20dp"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:layout_marginStart="10dp"
-            android:textAlignment="textStart"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgprofile"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@mipmap/profile"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"/>
 
-        <TextView
-            android:id="@+id/uemail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email"
-            android:layout_marginTop="20dp"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:layout_marginStart="10dp"
-            android:textAlignment="textStart"/>
+            <TextView
+                android:id="@+id/tvname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="25dp"
+                android:layout_below="@id/imgprofile"/>
 
-        <TextView
-            android:id="@+id/uphone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Phone Number"
-            android:layout_marginTop="20dp"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:layout_marginStart="10dp"
-            android:textAlignment="textStart"/>
-
-        <TextView
-            android:id="@+id/upassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Password"
-            android:layout_marginTop="20dp"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:layout_marginStart="10dp"
-            android:textAlignment="textStart"/>
+            <TextView
+                android:id="@+id/tvfname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Full Name"
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/imgprofile"
+                />
 
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tvemail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvfname"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@id/imgprofile"
+                android:inputType="textEmailAddress"
+                android:text="Email"
+                android:textSize="20sp" />
 
-</androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tvmobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mobile No"
+                android:inputType="numberDecimal"
+                android:textSize="20sp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/imgprofile"
+                android:layout_below="@id/tvemail"/>
+
+            <TextView
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="password"
+                android:textSize="20sp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/imgprofile"
+                android:layout_below="@id/tvmobile"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvname"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Update"
+                    android:layout_margin="5dp"
+                    android:backgroundTint="#F57F17"
+                    android:textAllCaps="false"
+                    android:layout_weight="0.5"
+                    android:id="@+id/btnupdate"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"
+                    android:layout_margin="5dp"
+                    android:textAllCaps="false"
+                    android:backgroundTint="#D81B60"
+                    android:layout_weight="0.5"
+                    android:id="@+id/btndelete"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

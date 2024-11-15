@@ -9,15 +9,28 @@
     tools:context=".delete_package">
 
 
-    <TextView
+    <Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/purple_200"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="Delete Package"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:background="#DF0D92F4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/amethysta"
+            android:textStyle="bold"
+            android:text="Delete Package"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="123dp"
+            tools:layout_editor_absoluteY="15dp" />
+
+    </Toolbar>
 
 
     <TextView
@@ -35,13 +48,21 @@
         android:background="@drawable/style_edittext"
         android:paddingLeft="10dp" />
 
+
     <Button
         android:id="@+id/btndeletedetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/Button"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/lite_blue"
+        android:elevation="10dp"
+        android:text="Delete"
+        android:textColor="@color/black"
+        android:textSize="25dp"
         android:layout_margin="10dp"
-        android:backgroundTint="#F57F17"
-        android:text="Delete" />
+        app:strokeColor="@color/black"
+        app:strokeWidth="2dp" />
 
 
 </LinearLayout>

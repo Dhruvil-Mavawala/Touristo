@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <ScrollView
@@ -18,59 +17,71 @@
             android:orientation="vertical">
 
             <Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryDark"
-                android:title="Update Page"
-                android:titleTextColor="@color/white"
-                android:layout_marginBottom="10dp"/>
+                android:background="#DF0D92F4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/amethysta"
+                    android:textStyle="bold"
+                    android:text="Update Package"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="123dp"
+                    tools:layout_editor_absoluteY="15dp" />
+
+            </Toolbar>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anta"
-                android:text="Box Name:"/>
+                android:text="Package Tittle:"/>
             <EditText
-                android:id="@+id/uname"
+                android:id="@+id/utittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:singleLine="true"
                 android:layout_marginHorizontal="10dp"
                 android:textColorHint="@color/black"
-                android:hint="Enter Box Name"
+                android:hint="Enter Package Tittle"
                 android:background="@drawable/style_edittext"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anta"
-                android:text="Box pic:"/>
+                android:text="Package Tittle:"/>
             <EditText
-                android:id="@+id/upic"
+                android:id="@+id/ulocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:singleLine="true"
                 android:layout_marginHorizontal="10dp"
                 android:textColorHint="@color/black"
-                android:hint="Enter the Picture Url"
+                android:hint="Enter Package Location"
                 android:background="@drawable/style_edittext"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anta"
-                android:text="Box Location:"/>
+                android:text="Package Price:"/>
 
 
             <EditText
-                android:id="@+id/uloc"
+                android:id="@+id/uprice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:singleLine="true"
                 android:background="@drawable/style_edittext"
 
-                android:hint="Enter Box location"
+                android:hint="Enter package Price"
                 android:padding="10dp"
                 android:textColorHint="@color/black" />
 
@@ -78,46 +89,46 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anta"
-                android:text="Box Capacity:" />
+                android:text="Package Description:" />
             <EditText
-                android:id="@+id/ucapacity"
+                android:id="@+id/uDesc"
                 android:layout_marginHorizontal="10dp"
-                android:singleLine="true"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:textColorHint="@color/black"
-                android:hint="Enter Box capacity"
+                android:hint="Enter Package Description"
                 android:background="@drawable/style_edittext"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anta"
-                android:text="Box Price" />
+                android:text="Package Guide:" />
             <EditText
-                android:id="@+id/uprice"
+                android:id="@+id/uguide"
                 android:layout_marginHorizontal="10dp"
-                android:singleLine="true"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:textColorHint="@color/black"
-                android:hint="Enter the Box Price"
+                android:hint="Enter Guide Data"
                 android:background="@drawable/style_edittext"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anta"
-                android:text="enter the rating :" />
+                android:text="enter the rating of place:" />
             <EditText
                 android:id="@+id/uscore"
                 android:layout_marginHorizontal="10dp"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:singleLine="true"
                 android:textColorHint="@color/black"
-                android:hint="Enter Rating "
+                android:hint="Enter Rating of place"
                 android:background="@drawable/style_edittext"/>
 
 
@@ -126,16 +137,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anta"
-                android:text="Box time"/>
+                android:text="Package Pic:"/>
             <EditText
-                android:id="@+id/utime"
+                android:id="@+id/upic"
                 android:layout_marginHorizontal="10dp"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:singleLine="true"
                 android:textColorHint="@color/black"
-                android:hint="Enter Available time"
+                android:hint="Enter Package pic"
                 android:background="@drawable/style_edittext"/>
 
 
@@ -145,57 +156,100 @@
                 android:fontFamily="@font/anta"
                 android:text="Duration:"/>
             <EditText
-                android:id="@+id/uhour"
+                android:id="@+id/uduration"
                 android:layout_marginHorizontal="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:singleLine="true"
                 android:textColorHint="@color/black"
-                android:hint="Enter Duration of hour"
+                android:hint="Enter Duration"
                 android:background="@drawable/style_edittext"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anta"
-                android:text="Date of Match:"/>
+                android:text="Number of Bed:"/>
             <EditText
-                android:id="@+id/udate"
+                android:id="@+id/ubed"
                 android:layout_marginHorizontal="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:singleLine="true"
                 android:textColorHint="@color/black"
-                android:hint="Enter Date of Match"
+                android:hint="Enter Number of Bed"
                 android:background="@drawable/style_edittext"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anta"
-                android:text="Descption:"/>
+                android:text="Wifi:"/>
             <EditText
-                android:id="@+id/etdesc"
+                android:id="@+id/uwifi"
                 android:layout_marginHorizontal="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:singleLine="true"
                 android:textColorHint="@color/black"
-                android:hint="Enter Desctiprion"
+                android:hint="Availiblity of wifi"
                 android:background="@drawable/style_edittext"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/anta"
+                android:text="Popular:"/>
+            <!--    <EditText-->
+            <!--        android:id="@+id/edpopualr"-->
+            <!--        android:layout_marginHorizontal="10dp"-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:padding="10dp"-->
+            <!--        android:textColorHint="@color/black"-->
+            <!--        android:hint="Popular or not"-->
+            <!--        android:background="@drawable/style_edittext"/>-->
 
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/upopualr"
+                android:layout_marginHorizontal="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:padding="5dp"
+                android:textColorHint="@color/white"
+                android:hint="Enter Product Description"
+                android:background="@drawable/style_edittext"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/anta"
+                android:text="Category:"/>
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/ucategory"
+                android:layout_marginHorizontal="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:padding="5dp"
+                android:textColorHint="@color/white"
+                android:hint="Enter Product Description"
+                android:background="@drawable/style_edittext"/>
 
             <Button
+                android:id="@+id/btnupdatedetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/Button"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/lite_blue"
+                android:elevation="10dp"
+                android:text="Update Package"
+                android:textColor="@color/black"
+                android:textSize="25dp"
                 android:layout_margin="10dp"
-                android:id="@+id/btnupdate"
-                android:backgroundTint="@color/black"
-                android:text="Update Box"/>
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp" />
 
         </LinearLayout>
 

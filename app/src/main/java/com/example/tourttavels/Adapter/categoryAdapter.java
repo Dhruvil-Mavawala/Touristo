@@ -1,16 +1,20 @@
 package com.example.tourttavels.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.tourttavels.Activities.catDetail;
 import com.example.tourttavels.Model.categorymodel;
 import com.example.tourttavels.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -25,8 +29,23 @@ public class categoryAdapter  extends FirebaseRecyclerAdapter<categorymodel, cat
     @Override
     protected void onBindViewHolder(@NonNull catviewHolder holder, int position, @NonNull categorymodel model) {
         holder.textViewCategory.setText(model.getCat_name());
+        holder.cat_name = model.getCat_name();
+        holder.cat_pic = model.getCat_pic();
         Glide.with(holder.textViewCategory.getContext())
                 .load(model.getCat_pic()).into(holder.imageViewCategory);
+        holder.catlinear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Handle the click event here
+                // You can perform any action you want when a category is clicked
+                // For example, you can start a new activity or show a toast message
+                Intent intent=new Intent(holder.catlinear.getContext(), catDetail.class);
+                intent.putExtra("cat_name",holder.cat_name);
+                intent.putExtra("cat_pic",holder.cat_pic);
+                holder.catlinear.getContext().startActivity(intent);
+                Toast.makeText(holder.catlinear.getContext(), "Category clicked: " + holder.cat_name, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @NonNull
@@ -44,10 +63,13 @@ public class categoryAdapter  extends FirebaseRecyclerAdapter<categorymodel, cat
     public class catviewHolder extends RecyclerView.ViewHolder {
         ImageView imageViewCategory;
         TextView textViewCategory;
+        String cat_name, cat_pic;
+        LinearLayout catlinear;
         public catviewHolder(@NonNull View itemView) {
             super(itemView);
             imageViewCategory = itemView.findViewById(R.id.catimg);
             textViewCategory = itemView.findViewById(R.id.titlerow);
+            catlinear = itemView.findViewById(R.id.catlinear);
         }
     }
 

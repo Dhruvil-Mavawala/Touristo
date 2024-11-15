@@ -4,89 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Admin_fragment.Admin_homeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DF0D92F4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/amethysta"
+            android:textStyle="bold"
+            android:text="Admin"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="123dp"
+            tools:layout_editor_absoluteY="15dp" />
+
+    </Toolbar>
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Admin Page"
-        android:textAllCaps="false"
+        android:text="Admin Dashboard"
         android:textColor="@color/black"
-        android:textColorHighlight="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvrevenue"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        app:contentPadding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.093">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="8dp" />
 
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Manage your app effectively"
+        android:textColor="@color/gray"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:layout_marginBottom="15dp"
-                android:textColorHighlight="@color/black"
-                android:textStyle="bold"
-                android:text="Revenue" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/black"
-                android:textStyle="bold"
-                android:text="1500" />
-
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvuser"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_margin="10dp"
         app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        app:contentPadding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.653"
-        app:layout_constraintStart_toEndOf="@+id/cvrevenue"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.094">
-
+        app:cardElevation="8dp"
+        app:contentPadding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -94,25 +78,20 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/users"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="8dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/black"
                 android:textStyle="bold"
-                android:text="User" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:layout_marginTop="15dp"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/black"
-                android:textStyle="bold"
-                android:text="50" />
+                android:text="Users" />
 
 
         </LinearLayout>
@@ -120,20 +99,15 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvpackage"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_margin="10dp"
-        android:layout_marginTop="76dp"
         app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        app:contentPadding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
+        app:cardElevation="8dp"
+        app:contentPadding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cvuser"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvuser"
-        app:layout_constraintVertical_bias="0.162">
-
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -141,25 +115,20 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/packages"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="8dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/black"
                 android:textStyle="bold"
-                android:text="Package"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:layout_marginTop="15dp"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/black"
-                android:textStyle="bold"
-                android:text="10"/>
+                android:text="Packages" />
 
 
         </LinearLayout>
@@ -167,20 +136,15 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvcategory"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_margin="10dp"
-        android:layout_marginTop="76dp"
         app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        app:contentPadding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
+        app:cardElevation="8dp"
+        app:contentPadding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cvpackage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvrevenue"
-        app:layout_constraintVertical_bias="0.173">
-
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -188,24 +152,20 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/category"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="8dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Category"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/black"
                 android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="15"
-                android:layout_marginTop="15dp"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:text="Categories" />
 
 
         </LinearLayout>
@@ -213,20 +173,15 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvbooking"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_margin="10dp"
-        android:layout_marginTop="76dp"
         app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        app:contentPadding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
+        app:cardElevation="8dp"
+        app:contentPadding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cvcategory"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvrevenue"
-        app:layout_constraintVertical_bias="0.642">
-
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -234,27 +189,20 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/booking"
+                android:layout_marginBottom="8dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bookings"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/black"
                 android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="15"
-                android:layout_marginTop="15dp"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                android:text="Bookings" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

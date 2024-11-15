@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tourttavels.Adapter.categoryAdapter;
+import com.example.tourttavels.Adapter.categoryAdapter2;
 import com.example.tourttavels.Model.categorymodel;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -25,7 +26,7 @@ public class admincategory extends AppCompatActivity {
     FloatingActionButton fabdeletecat;
     FloatingActionButton fabcat;
     RecyclerView rcvcat;
-    categoryAdapter adapter;
+    categoryAdapter2 adapter;
 
 
 
@@ -35,9 +36,9 @@ public class admincategory extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_admincategory);
 
-        rcvcat=findViewById(R.id.rcvcat);
-        fabcat=findViewById(R.id.fabcat);
-        fabdeletecat=findViewById(R.id.fabdeletecat);
+        rcvcat=findViewById(R.id.rcvcatla);
+        fabcat=findViewById(R.id.fabcatla);
+        fabdeletecat=findViewById(R.id.fabdeletecatla);
 
         fabcat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +60,7 @@ public class admincategory extends AppCompatActivity {
                         .setQuery(query,categorymodel.class)
                         .build();
 
-        adapter = new categoryAdapter(options);
+        adapter = new categoryAdapter2(options);
         rcvcat.setLayoutManager(new GridLayoutManager(this,2));
         rcvcat.setAdapter(adapter);
 
@@ -70,6 +71,17 @@ public class admincategory extends AppCompatActivity {
         });
     }
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        adapter.notifyDataSetChanged();
+    }
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
         adapter.startListening();
@@ -79,5 +91,23 @@ public class admincategory extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         adapter.stopListening();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        adapter.notifyDataSetChanged();
     }
 }

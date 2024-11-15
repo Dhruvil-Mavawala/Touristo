@@ -13,12 +13,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.example.tourttavels.Activities.AllProductActivity;
+import com.example.tourttavels.Activities.AllcategoryActivity;
 import com.example.tourttavels.Adapter.categoryAdapter;
 import com.example.tourttavels.Model.popularmodel;
 import com.example.tourttavels.R;
+import com.example.tourttavels.admincategory;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.example.tourttavels.Adapter.popularAdapter;
 import com.example.tourttavels.Model.categorymodel;
@@ -27,8 +31,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
 public class HomeFragment extends Fragment {
+    TextView seeallcat;
     categoryAdapter categoryAdapter;
     popularAdapter popularAdapter;
+
+    ViewFlipper vf1;
+
+    int img[] = {R.drawable.banner4};
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,6 +53,21 @@ public class HomeFragment extends Fragment {
         RecyclerView recyclerViewpopular=view.findViewById(R.id.view_pop);
         RecyclerView recyclerViewcategory=view.findViewById(R.id.view_cat);
         TextView seeallpop=view.findViewById(R.id.seealltv);
+        seeallcat=view.findViewById(R.id.seeallcat);
+
+        vf1 =view.findViewById(R.id.vf);
+
+        for(int i = 0; i<=img.length-1 ; i++)
+        {
+            dispimg(img[i]);
+        }
+
+        seeallcat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), AllcategoryActivity.class));
+            }
+        });
 
         seeallpop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,21 +97,51 @@ public class HomeFragment extends Fragment {
         recyclerViewpopular.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
         recyclerViewpopular.setAdapter(popularAdapter);
     }
+    void dispimg(int i) {
+        ImageView i1 = new ImageView(getContext());
+        i1.setImageResource(i);
+        vf1.addView(i1);
+        vf1.setFlipInterval(3000);
+        vf1.setAutoStart(true);
+
+        // Set animations for flipping
+        vf1.setInAnimation(getContext(),R.anim.slide_in_right);
+        vf1.setOutAnimation(getContext(),R.anim.slide_out_left);
+    }
+
 
     @Override
     public void onStart() {
         super.onStart();
-        categoryAdapter.startListening();
         popularAdapter.startListening();
+        categoryAdapter.startListening();
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        categoryAdapter.stopListening();
-        popularAdapter.stopListening();
-
+        popularAdapter.startListening();
+        categoryAdapter.startListening();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        popularAdapter.startListening();
+        categoryAdapter.startListening();
+    }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        popularAdapter.startListening();
+        categoryAdapter.startListening();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        popularAdapter.startListening();
+        categoryAdapter.startListening();
+    }
 }

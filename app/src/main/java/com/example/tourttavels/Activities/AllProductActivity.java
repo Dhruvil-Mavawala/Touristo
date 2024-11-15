@@ -51,17 +51,32 @@ public class AllProductActivity extends AppCompatActivity {
 
 
     @Override
-    public void onStart() {
+    protected void onStart() {
         super.onStart();
         popularAdapter.startListening();
     }
 
     @Override
-    public void onStop() {
+    protected void onStop() {
         super.onStop();
         popularAdapter.stopListening();
-
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        popularAdapter.notifyDataSetChanged();
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        popularAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        popularAdapter.notifyDataSetChanged();
+    }
 }

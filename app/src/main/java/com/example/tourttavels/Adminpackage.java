@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tourttavels.Adapter.popularAdapter;
+import com.example.tourttavels.Adapter.popularAdapter2;
 import com.example.tourttavels.Model.popularmodel;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,10 +22,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
 public class Adminpackage extends AppCompatActivity {
-    popularAdapter adapter;
+    popularAdapter2 adapter;
     RecyclerView recycler;
     FloatingActionButton btnfab;
-    FloatingActionButton btnfabdelete;
 
 
     @Override
@@ -35,16 +35,8 @@ public class Adminpackage extends AppCompatActivity {
 
         recycler = findViewById(R.id.rcv1);
         btnfab=findViewById(R.id.fab);
-        btnfabdelete=findViewById(R.id.fabdelete);
 
-        btnfabdelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Adminpackage.this, "Clicked", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Adminpackage.this,delete_package.class));
-                finish();
-            }
-        });
+
 
         btnfab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +53,7 @@ public class Adminpackage extends AppCompatActivity {
                         .setQuery(query,popularmodel.class)
                         .build();
 
-        adapter = new popularAdapter(options);
+        adapter = new popularAdapter2(options, this);
         recycler.setLayoutManager(new LinearLayoutManager(this));
         recycler.setAdapter(adapter);
 
@@ -73,6 +65,17 @@ public class Adminpackage extends AppCompatActivity {
         });
     }
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        adapter.notifyDataSetChanged();
+    }
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
         adapter.startListening();
@@ -82,5 +85,23 @@ public class Adminpackage extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         adapter.stopListening();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        adapter.notifyDataSetChanged();
     }
 }

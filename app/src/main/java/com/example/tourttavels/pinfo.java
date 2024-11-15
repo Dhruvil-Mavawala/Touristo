@@ -55,7 +55,7 @@ public class pinfo extends AppCompatActivity {
                             // Set user data on TextViews
                             fnm.setText("Full Name :- "+userModel.getFullname());
                             usr.setText("Username :- "+userModel.getUsername());
-                            mbl.setText("Phone Number ;- "+userModel.getPhone());  // Assuming you have a getMobile method in UserModel
+                            mbl.setText("Phone Number :- "+userModel.getPhone());  // Assuming you have a getMobile method in UserModel
                             mail.setText("Email :- "+userModel.getEmail());  // Assuming you have a getEmail method in UserModel
                             psw.setText("Password :- "+userModel.getPassword());  // Assuming you have a getPassword method in UserModel
                         }

@@ -35,6 +35,8 @@ public class popularmodel implements Serializable {
         this.score = score;
     }
 
+
+
     public boolean isPopular() {
         return popular;
     }

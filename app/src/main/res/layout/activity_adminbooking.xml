@@ -3,20 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/mainbook"
     tools:context=".adminbooking">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#3180FF"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="Booking"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:background="#DF0D92F4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/amethysta"
+            android:textStyle="bold"
+            android:text="Handle Bookings"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="123dp"
+            tools:layout_editor_absoluteY="15dp" />
+
+    </Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleBooking"
@@ -24,7 +38,7 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:padding="15dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:paddingStart="8dp"
         android:paddingEnd="8dp" />
 

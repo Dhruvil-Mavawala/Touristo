@@ -159,13 +159,21 @@
 
     <Button
         android:id="@+id/btnBooking"
-        android:layout_width="wrap_content"
+        style="@style/Button"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="33dp"
-        android:text="Confirm Booking"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/lite_blue"
+        android:elevation="10dp"
+        android:text="Pay Now"
+        android:textColor="@color/black"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagepic"
-        app:layout_constraintVertical_bias="0.939" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:strokeColor="@color/black"
+        app:strokeWidth="2dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

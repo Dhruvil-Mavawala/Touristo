@@ -4,29 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@android:color/background_light"
     tools:context=".searchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <SearchView
+        android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#3180FF"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="package"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:queryHint="Search here..."
+        android:iconifiedByDefault="false"
+        android:layout_margin="10dp"
+        android:background="#F0E8E8"
+        android:elevation="4dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cycle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:clipToPadding="false"
-        android:padding="15dp"
-        android:layout_marginTop="10dp"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp" />
-
-
+        android:padding="8dp"
+        android:scrollbars="vertical"
+        android:background="@android:color/white" />
 
 </LinearLayout>

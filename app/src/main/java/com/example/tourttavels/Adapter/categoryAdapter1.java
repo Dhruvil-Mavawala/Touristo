@@ -20,9 +20,9 @@ import com.example.tourttavels.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class categoryAdapter  extends FirebaseRecyclerAdapter<categorymodel, categoryAdapter.catviewHolder> {
+public class categoryAdapter1 extends FirebaseRecyclerAdapter<categorymodel, categoryAdapter1.catviewHolder> {
 
-    public categoryAdapter(@NonNull FirebaseRecyclerOptions<categorymodel> options) {
+    public categoryAdapter1(@NonNull FirebaseRecyclerOptions<categorymodel> options) {
         super(options);
     }
 
@@ -54,7 +54,7 @@ public class categoryAdapter  extends FirebaseRecyclerAdapter<categorymodel, cat
 
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        View photoView = inflater.inflate(R.layout.row_category, parent, false);
+        View photoView = inflater.inflate(R.layout.row_category1, parent, false);
         catviewHolder viewHolder = new catviewHolder(photoView);
         return viewHolder;
 

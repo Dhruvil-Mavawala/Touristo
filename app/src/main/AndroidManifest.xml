@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+
+
 
     <application
         android:allowBackup="true"
@@ -14,6 +19,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TourtTavels"
         tools:targetApi="31">
+        <activity
+            android:name=".Activities.AllcategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.catDetail"
+            android:exported="false" />
         <activity
             android:name=".pinfo"
             android:exported="false" />
@@ -49,12 +60,6 @@
             android:exported="false" />
         <activity
             android:name=".Activities.BookActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Admin_fragment.Package_Admin"
-            android:exported="false" />
-        <activity
-            android:name="com.example.adminoftouristo.Admin"
             android:exported="false" />
         <activity
             android:name=".PackDetail"

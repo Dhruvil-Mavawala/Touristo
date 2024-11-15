@@ -52,5 +52,8 @@ dependencies {
     implementation ("com.google.android.gms:play-services-auth:21.2.0")
     implementation ("androidx.appcompat:appcompat:1.6.1'")
     implementation ("androidx.drawerlayout:drawerlayout:1.1.1")
+    implementation ("com.orhanobut:dialogplus:1.11@aar")
+    implementation ("androidx.biometric:biometric:1.1.0")
+
 
 }

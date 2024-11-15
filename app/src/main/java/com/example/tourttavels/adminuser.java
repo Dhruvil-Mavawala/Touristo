@@ -43,7 +43,7 @@ public class adminuser extends AppCompatActivity {
                         .setQuery(query,UserModel.class)
                         .build();
 
-        adapter = new UserAdapter(options);
+        adapter = new UserAdapter(options,this);
         cycleuser.setLayoutManager(new LinearLayoutManager(this));
         cycleuser.setAdapter(adapter);
 

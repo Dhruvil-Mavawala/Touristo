@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -61,7 +62,8 @@ public class popularAdapter extends FirebaseRecyclerAdapter<popularmodel,popular
     class popularViewHolder extends RecyclerView.ViewHolder {
         TextView tittle,location,description,bed,guide,pic,wifi,duration,category,popular,price,score;
         ImageView picimg;
-        ConstraintLayout c;
+
+        CardView c;
 
 
         public popularViewHolder(@NonNull View itemView) {

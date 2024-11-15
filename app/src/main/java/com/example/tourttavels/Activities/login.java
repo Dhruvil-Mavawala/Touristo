@@ -139,9 +139,8 @@ public class login extends AppCompatActivity {
                     startActivity(intent);
                     finish();
 
-                } else if(uname.contains("@")){
-                    checkemail();
-                }else{
+                }
+                else{
                     checkUser();
                 }
             }
@@ -200,50 +199,4 @@ public class login extends AppCompatActivity {
         });
     }
 
-    private void checkemail() {
-        Query query= FirebaseDatabase.getInstance().getReference().child("user")
-                .orderByChild("email").equalTo(uname);
-        query.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //home
-                if(snapshot.exists()){
-                    for (DataSnapshot childSnapshot : snapshot.getChildren()) {
-                        String dbpass=childSnapshot.child("password").getValue(String.class);
-                        String dbFullname=childSnapshot.child("fullname").getValue(String.class);
-                        String dbUsername=childSnapshot.child("username").getValue(String.class);
-                        String dbphone=childSnapshot.child("phone").getValue(String.class);
-
-
-                        if(pass.equals(dbpass)){
-                            SharedPreferences sharedPreferences=getSharedPreferences(Constantdata.SP_LOGIN,MODE_PRIVATE);
-                            SharedPreferences.Editor  editor=sharedPreferences.edit();
-                            editor.putString(Constantdata.SP_USERNAME,uname);
-                            editor.putString(Constantdata.SP_EMAIL,dbUsername);
-                            editor.putString(Constantdata.SP_FULLNAME,dbFullname);
-                            editor.putString(Constantdata.SP_PHONE,dbphone);
-                            editor.commit();
-
-                            Intent intent=new Intent(login.this, Home.class);
-                            startActivity(intent);
-                            finish();
-                        }else{
-                            Toast.makeText(login.this, "Invalid Password", Toast.LENGTH_SHORT).show();
-                        }
-
-                    }
-
-                }else {
-                    Toast.makeText(login.this, "User Not Fetch!!", Toast.LENGTH_SHORT).show();
-
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(login.this, "db error...", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 }

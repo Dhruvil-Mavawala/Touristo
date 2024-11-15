@@ -8,19 +8,14 @@
     android:background="@color/white"
     tools:context=".User_fragment.ProfileFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/image1"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@mipmap/profile"
-        app:civ_border_width="2dp"
-        />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
     <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
@@ -38,11 +33,52 @@
     <!--        app:srcCompat="@mipmap/camera_1"-->
     <!--        />-->
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie"
+        android:layout_width="105dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="136dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/upload" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:src="@mipmap/profile"
+        app:civ_border_width="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="196dp"
+        android:fontFamily="@font/anek_bangla_semibold"
+        android:hint="Name"
+        android:padding="10dp"
+        android:textColor="#393A3A"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.599"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/camera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/flotingbutton"
         android:fontFamily="@font/fontawesome"
@@ -54,41 +90,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/image1"
         app:layout_constraintEnd_toEndOf="@+id/image1" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="196dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/tvname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/anek_bangla_semibold"
-            android:padding="10dp"
-            android:textColor="#393A3A"
-            android:textSize="32dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/nameedit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/fontawesome"
-            android:textColor="#393A3A"
-            android:textSize="32dp"
-            android:textStyle="bold" />
-
-
-    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -100,7 +101,7 @@
         android:padding="10dp"
         android:text="Account Setting"
         android:textColor="#393A3A"
-        android:textSize="28sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -110,7 +111,7 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="340dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
         app:cardCornerRadius="10dp"
@@ -121,7 +122,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
             android:orientation="horizontal"
             android:weightSum="1">
 
@@ -138,7 +140,7 @@
                 android:layout_weight="0.9"
                 android:text="Personal Information"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -159,7 +161,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="390dp"
+        android:layout_marginTop="410dp"
         android:layout_marginEnd="20dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
@@ -171,7 +173,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
             android:orientation="horizontal"
             android:weightSum="1">
 
@@ -188,7 +191,7 @@
                 android:layout_weight="0.9"
                 android:text="About Us               "
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -209,7 +212,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="460dp"
+        android:layout_marginTop="480dp"
         android:layout_marginEnd="20dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
@@ -221,7 +224,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
             android:orientation="horizontal"
             android:weightSum="1">
 
@@ -238,7 +242,7 @@
                 android:layout_weight="0.9"
                 android:text="Help and Support"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -259,7 +263,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="530dp"
+        android:layout_marginTop="550dp"
         android:layout_marginEnd="20dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
@@ -271,7 +275,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
             android:orientation="horizontal"
             android:weightSum="1">
 
@@ -283,12 +288,13 @@
                 android:src="@mipmap/version" />
 
             <TextView
+                android:id="@+id/tvvers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.9"
-                android:text="Version 4.128.134511"
+                android:text="3.4.4"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -306,18 +312,19 @@
 
     <Button
         android:id="@+id/btnlogout"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
         style="@style/Button"
         android:gravity="center"
         android:layout_gravity="center"
-        android:layout_marginTop="620dp"
+        android:layout_marginTop="630dp"
+        android:layout_marginBottom="5dp"
         android:backgroundTint="@color/lite_blue"
         android:fontFamily="@font/anek_bangla_semibold"
         android:textAllCaps="false"
         android:text="LogOut"
         android:textColor="@color/black"
-        android:textSize="18dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -325,5 +332,6 @@
         app:strokeColor="@color/blue"
         app:strokeWidth="2dp" />
 
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

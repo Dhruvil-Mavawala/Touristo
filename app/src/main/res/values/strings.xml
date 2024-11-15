@@ -10,6 +10,14 @@
     <string name="screen2desc">we help you to connect with local vibes of the nature</string>
     <string name="screen3desc">we organize your tour and you explore our luxuries services.</string>
     <string name="startDesc">Book Your next trip and Interact with nature and explore new place.</string>
+    <string name="nav_open">Open Navigation Drawer</string>
+    <string name="nav_close">CLose Navigation Drawer</string>
+
+    <!-- Other strings -->
+    <string-array name="popular_choices">
+        <item>true</item>
+        <item>false</item>
+    </string-array>
 
 
 </resources>

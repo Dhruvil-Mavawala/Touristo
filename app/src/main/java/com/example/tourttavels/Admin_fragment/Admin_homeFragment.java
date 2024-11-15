@@ -20,7 +20,7 @@ import com.example.tourttavels.admincategory;
 import com.example.tourttavels.adminuser;
 
 public class Admin_homeFragment extends Fragment {
-    CardView cvpackage, cvuser, cvcategory,cvbooking,cvrevanue;
+    CardView cvpackage, cvuser, cvcategory,cvbooking;
     View view;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -70,7 +70,6 @@ public class Admin_homeFragment extends Fragment {
         cvuser=view.findViewById(R.id.cvuser);
         cvcategory=view.findViewById(R.id.cvcategory);
         cvbooking=view.findViewById(R.id.cvbooking);
-        cvrevanue=view.findViewById(R.id.cvrevenue);
 
         cvpackage.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -54,6 +54,7 @@ public class BookActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Serializable serializableObject = intent.getSerializableExtra("pack");
+        String tvdate=intent.getStringExtra("date");
 
         if (serializableObject instanceof popularmodel) {
              model = (popularmodel) serializableObject;
@@ -84,7 +85,7 @@ public class BookActivity extends AppCompatActivity {
         btnBooking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BookModel bookModel=new BookModel(gst+"",pid,pname,ppic,price+"",status,total+"",username);
+                BookModel bookModel=new BookModel(gst+"",pid+"",pname+"",ppic+"",price+"",status+"",total+"",username+"",tvdate+"");
                 FirebaseDatabase.getInstance().getReference().child("booking").push().setValue(bookModel);
 
                     Intent i=new Intent(BookActivity.this,SuccessActivity.class);

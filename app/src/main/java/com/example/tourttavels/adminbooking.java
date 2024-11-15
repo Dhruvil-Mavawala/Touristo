@@ -42,7 +42,7 @@ public class adminbooking extends AppCompatActivity {
                         .setQuery(query,BookModel.class)
                         .build();
 
-        adapter = new BookAdapter2(options);
+        adapter = new BookAdapter2(options,this);
         cyclebook.setLayoutManager(new LinearLayoutManager(this));
         cyclebook.setAdapter(adapter);
 
@@ -64,5 +64,23 @@ public class adminbooking extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         adapter.stopListening();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        adapter.notifyDataSetChanged();
     }
 }

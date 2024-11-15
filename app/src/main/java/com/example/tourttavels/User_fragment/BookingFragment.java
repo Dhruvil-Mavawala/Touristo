@@ -87,7 +87,7 @@ public class BookingFragment extends Fragment {
                 .setQuery(query,BookModel.class)
                 .build();
 
-        bookAdapter=new BookAdapter(options);
+        bookAdapter=new BookAdapter(options,getContext());
         recyclerView.setLayoutManager(new androidx.recyclerview.widget.LinearLayoutManager(getContext()));
         recyclerView.setAdapter(bookAdapter);
 
