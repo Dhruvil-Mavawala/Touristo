@@ -98,7 +98,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:background="@color/white"
                     android:fontFamily="@font/fontawesome"
                     android:text="&#xf156;"
                     android:layout_weight="0.5"
@@ -113,7 +112,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:background="@color/white"
                     android:fontFamily="@font/allerta_stencil"
                     android:text="$200"
                     android:layout_weight="3"
@@ -133,7 +131,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    app:cardBackgroundColor="#F5F7F8"
+                    app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="30dp"
                     app:cardElevation="10dp"
                     app:contentPadding="5dp">
@@ -158,7 +156,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    app:cardBackgroundColor="#F5F7F8"
+                    app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="30dp"
                     app:cardElevation="10dp"
                     app:contentPadding="5dp">
@@ -187,7 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    app:cardBackgroundColor="#F5F7F8"
+                    app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="30dp"
                     app:cardElevation="10dp"
                     app:contentPadding="5dp">
@@ -212,7 +210,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    app:cardBackgroundColor="#F5F7F8"
+                    app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="30dp"
                     app:cardElevation="15dp"
                     app:contentPadding="5dp">

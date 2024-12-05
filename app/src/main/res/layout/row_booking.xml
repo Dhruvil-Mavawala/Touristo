@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@android:color/white"
+    android:background="@color/white"
     android:padding="16dp">
 
 
@@ -79,10 +79,10 @@
                     android:backgroundTint="@color/lit_red"
                     android:fontFamily="@font/anek_bangla_semibold"
                     android:text="Cancel"
-                    android:textColor="@color/black"
+                    android:textColor="#000000"
                     android:textSize="15dp"
                     android:gravity="center"
-                    app:strokeColor="@color/black"
+                    app:strokeColor="#000000"
                     app:strokeWidth="2dp" />
 
             </LinearLayout>
@@ -90,7 +90,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@android:color/darker_gray"
+                android:background="#000000"
                 android:layout_marginTop="12dp"/>
 
             <TextView
